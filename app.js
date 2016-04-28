@@ -14,7 +14,6 @@ app.use('/css', modules.express.static(__dirname + '/public/stylesheets/'));
 app.use('/js', modules.express.static(__dirname + '/public/javascripts/'));
 app.use('/img', modules.express.static(__dirname + '/public/images/'));
 app.use(modules.flash()); // use connect-flash for flash messages stored in session
-app.set('superSecret', modules.config.secret); // secret variable
 app.use(modules.logger('dev')); // log every request to the console
 app.set('trust proxy', 1) // trust first proxy
 
@@ -26,12 +25,6 @@ app.use(modules.bodyParser.urlencoded({ extended: false }));
 //body parser not reccommended - http://stackoverflow.com/a/20132867/815929
 app.use(modules.cookieParser("optional super secret"));// read cookies (needed for auth)
 app.use(modules.express.static(modules.path.join(__dirname, 'public')));
-
-app.use(function(req, res, next) {
-  res.cookie('fooo','bar');
-  res.cookie('name','foo',{signed:true});
-  next();
-});
 
 
 //THIS IS NOT DONE IN STARTING AS APP DIDNT HAVE REQUIRED PROPERTIES THEN
@@ -71,7 +64,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-console.log("hellonew");
 
-process.env.PORT = 3001;
+process.env.PORT = 3002;
 module.exports = app;

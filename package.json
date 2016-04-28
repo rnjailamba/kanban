@@ -5,6 +5,7 @@
   "description": "",
   "main": "./server/index.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1",
     "jsx": "./node_modules/.bin/jsx common/components/ lib/components/",
     "bundle": "./node_modules/.bin/browserify browser/index.js -d > public/js/bundle.js"
