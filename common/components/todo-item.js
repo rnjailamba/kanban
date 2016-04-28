@@ -1,6 +1,6 @@
 var React = require('react');
 
-module.exports = React.createClass({
+var TodoComponent = React.createClass({
   displayName: 'TodoItem',
 
   /**
@@ -37,3 +37,5 @@ module.exports = React.createClass({
     this.setState({ done: !!done});
   }
 });
+
+module.exports.component = TodoComponent;
