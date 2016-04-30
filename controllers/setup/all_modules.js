@@ -9,7 +9,11 @@ var os = require('os'); // used to get OS information during sign up
 var React = require('react');
 var Handlebars = require('handlebars');
 var fs = require('fs');
-
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var Link = require('react-router').Link;
+var ReactDOMServer = require('react-dom/server');
+var ReactDOM = require('react-dom');
 
 module.exports.express = express;
 module.exports.config = config;
@@ -22,3 +26,7 @@ module.exports.os = os;
 module.exports.React = React;
 module.exports.Handlebars = Handlebars;
 module.exports.fs = fs;
+module.exports.Router = Router;
+module.exports.Route = Route;
+module.exports.ReactDOMServer = ReactDOMServer;
+module.exports.ReactDOM = ReactDOM;

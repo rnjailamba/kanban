@@ -11,15 +11,14 @@ var TodoComponent = React.createClass({
   },
 
   componentDidMount: function() {
-    this.setDone(this.refs.done.getDOMNode().checked);
   },
 
   render: function() {
     return (
-      <label>
-        <input ref="done" type="checkbox" defaultChecked={this.state.done} onChange={this.onChange} />
-        {this.props.name}
-      </label>
+            <label>
+               <input ref="done" type="checkbox" defaultChecked={this.state.done} onChange={this.onChange} />
+               {this.props.name}
+             </label>    
     );
   },
 

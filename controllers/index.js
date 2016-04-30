@@ -8,8 +8,11 @@ var TodoItem = require('../lib/components/todo-item');
 var React = modules.React;
 var Handlebars = modules.Handlebars;
 var fs = modules.fs;
-
-
+var Router = modules.Router;
+var Route = modules.Route;
+var Link = modules.Link;
+var ReactDOMServer = modules.ReactDOMServer;
+var ReactDOM = modules.ReactDOM;
 // PING
 // ==============================================
 router.get('/ping', function(req, res){
@@ -37,7 +40,7 @@ router.get('/index', function(req, res){
   var renderedComponent = getRenderedComponent(TodoItem);
   var renderedLayout = getRenderedLayout(renderedComponent);
   res.status(200).send(renderedLayout);
-  
+
 });
 
 
@@ -48,7 +51,7 @@ var getRenderedComponent = function(TodoItem){
   // manually. See https://gist.github.com/sebmarkbage/ae327f2eda03bf165261
   var TodoItemFactory = React.createFactory(TodoItem.component);
 
-  var renderedComponent = React.renderToString(
+  var renderedComponent = ReactDOMServer.renderToString(
     TodoItemFactory({done: false, name: 'Write Tutorial'})
   );
   return renderedComponent;
