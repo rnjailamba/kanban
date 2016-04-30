@@ -7,7 +7,7 @@ var AWS_ACCESS_KEY_ID = config.amazonS3key;
 var AWS_SECRET_ACCESS_KEY = config.amazonS3secret;
 AWS.config.update({accessKeyId: AWS_ACCESS_KEY_ID, secretAccessKey: AWS_SECRET_ACCESS_KEY});
 var s3 = new AWS.S3();
-console.log('got the config for aws',config.amazonS3key,config.amazonS3secret);
+// console.log('got the config for aws',config.amazonS3key,config.amazonS3secret);
 
 
 //IMAGE UPLOAD HELPERS - START
@@ -28,10 +28,10 @@ var replacePlaceholder = function(fileName){
 
 
 var presignedURLForImageUpload = function(){
-    var params = {  Bucket: 'cementifyblogimages', 
-    				Key: replacePlaceholder("placeholder.jpg"),    
-    				ContentType: 'image;charset=UTF-8', 
-					ACL: 'public-read',    				
+    var params = {  Bucket: 'cementifyblogimages',
+    				Key: replacePlaceholder("placeholder.jpg"),
+    				ContentType: 'image;charset=UTF-8',
+					ACL: 'public-read',
     				Expires: 6000000};
     var url = s3.getSignedUrl('putObject', params);
     return url;
@@ -54,4 +54,3 @@ router.post('/getImageURL', function(req, res, next) {
 
 
 module.exports.router = router;
-

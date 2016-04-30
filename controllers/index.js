@@ -32,10 +32,12 @@ router.get('/', function(req, res){
 
 // INDEX
 // ==============================================
-router.get('/', function(req, res){
+router.get('/index', function(req, res){
 
-    res.status(200).send("Done");
-
+  var renderedComponent = getRenderedComponent(TodoItem);
+  var renderedLayout = getRenderedLayout(renderedComponent);
+  res.status(200).send(renderedLayout);
+  
 });
 
 
