@@ -28,6 +28,7 @@ router.get('/', function(req, res){
 
     var renderedComponent = getRenderedComponent(TodoItem);
     var renderedLayout = getRenderedLayout(renderedComponent);
+    console.log(renderedLayout);
     res.status(200).send(renderedLayout);
 
 });
