@@ -1,6 +1,3 @@
-require("babel-register")({
-  presets: ['es2015', 'react']
-});
 var modules = require('./setup/all_modules');//require all modules that are shared by all controllers
 var router = modules.express.Router();
 var config = require('../config/config.js');//require all modules that are shared by all controllers
@@ -8,7 +5,8 @@ var appConfig = require('../config/appConfig'); // configure service api urls in
 var redisClient = require('../helpers/exporters/export_redisClient').redisClient;
 var loginMiddleWare = require("../helpers/login/api.js");
 var TodoItem = require('../common/components/todo-item');
-var React = modules.React;
+// var React = modules.React;
+import * as React from 'react';
 var Handlebars = modules.Handlebars;
 var fs = modules.fs;
 var Router = modules.Router;

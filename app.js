@@ -1,3 +1,6 @@
+require("babel-register")({
+  presets: ['es2015', 'react']
+});
 var modules = require("./all_modules.js");//simply loads all modules(for app), no initialisation/creation of object of module
 var app = modules.express();
 
