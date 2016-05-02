@@ -62,6 +62,7 @@
     "socket.io": "^1.4.5",
     "solr-client": "^0.6.0",
     "twilio": "^2.7.0",
+    "underscore": "^1.8.3",
     "urlgenerator": "^0.1.0",
     "winston": "^2.1.1"
   }

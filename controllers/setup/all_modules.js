@@ -12,6 +12,7 @@ var fs = require('fs');
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var Link = require('react-router').Link;
+var hashHistory = require('react-router').hashHistory;
 var ReactDOMServer = require('react-dom/server');
 var ReactDOM = require('react-dom');
 

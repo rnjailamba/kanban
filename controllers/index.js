@@ -60,7 +60,7 @@ var getRenderedComponent = function(TodoItem){
   //   TodoItemFactory({done: false, name: 'Write Tutorial'})
   // );
   var renderedComponent = ReactDOMServer.renderToString(
-    TodoItemFactory()
+    TodoItemFactory({name: "John"})
   );
   return renderedComponent;
 }
