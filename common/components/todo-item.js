@@ -1,40 +1,20 @@
-var React = require('react');
+var isNode = typeof module !== 'undefined' && module.exports
+  , React = isNode ? require('react') : window.React
+  , ReactDOM = isNode ? require('react') : window.ReactDOM
 
-var TodoComponent = React.createClass({
-  displayName: 'TodoItem',
-
-  /**
-   * Lifecycle functions
-   **/
-  getInitialState: function() {
-    return { done: this.props.done }
-  },
-
-  componentDidMount: function() {
+var TodoItem = React.createClass({
+  handleClick: function () {
+    alert('You clicked!')
   },
 
   render: function() {
-    return (
-            <label>
-               <input ref="done" type="checkbox" defaultChecked={this.state.done} onChange={this.onChange} />
-               {this.props.name}
-             </label>
-    );
-  },
-
-  /**
-   * Event handlers
-   **/
-  onChange: function(event) {
-    this.setDone(event.target.checked);
-  },
-
-  /**
-   * Utilities
-   **/
-  setDone: function(done) {
-    this.setState({ done: !!done});
+    return <div onClick={this.handleClick}>Hello {this.props.name}</div>
   }
-});
+})
 
-module.exports.component = TodoComponent;
+if (isNode) {
+  console.log("in is node");
+  module.exports.component = TodoItem;
+} else {
+  ReactDOM.render(<TodoItem name="John" />, document.getElementById('react-root'))
+}

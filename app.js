@@ -12,6 +12,7 @@ app.use('/node_modules', modules.express.static(__dirname + '/node_modules/'));
 app.use('/bower', modules.express.static(__dirname + '/bower_components/'));
 app.use('/css', modules.express.static(__dirname + '/public/stylesheets/'));
 app.use('/js', modules.express.static(__dirname + '/public/javascripts/'));
+app.use('/common', modules.express.static(__dirname + '/common/'));
 app.use('/img', modules.express.static(__dirname + '/public/images/'));
 app.use(modules.flash()); // use connect-flash for flash messages stored in session
 app.use(modules.logger('dev')); // log every request to the console

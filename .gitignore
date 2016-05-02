@@ -3,7 +3,7 @@
 node_modules
 .DS_Store
 lib/components/.module-cache/
-public/
+
 # Created by https://www.gitignore.io
 
 ### vim ###

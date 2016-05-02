@@ -1,8 +1,16 @@
 <!doctype html>
 <html lang="">
+<head>
+   <script src="js/core/react.js"></script>
+   <script src="js/core/react-dom.js"></script>
+   <script src="js/core/browser.min.js"></script>
+   <script src="js/core/jquery.min.js"></script>
+
+</head>
   <body>
     <!-- Note: Lack of space between div and content is important -->
-    <div id="content">{{{content}}}</div>
-    <script src="js/bundle.js"></script>
+    <div id="react-root">{{{content}}}</div>
+    <!-- <script src="js/bundle.js"></script> -->
+    <script type="text/babel" src="common/components/todo-item.js"></script>
   </body>
 </html>
