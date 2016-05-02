@@ -1,6 +1,4 @@
 require("babel-register")({
-  // This will override `node_modules` ignoring - you can alternatively pass
-  // an array of strings to be explicitly matched or a regex / glob
   presets: ['es2015', 'react']
 });
 var modules = require('./setup/all_modules');//require all modules that are shared by all controllers
@@ -34,7 +32,7 @@ router.get('/', function(req, res){
     var renderedComponent = getRenderedComponent(TodoItem);
     // console.log(renderedComponent);
     var renderedLayout = getRenderedLayout(renderedComponent);
-    console.log(renderedLayout);
+    // console.log(renderedLayout);
     res.status(200).send(renderedLayout);
 
 });
@@ -62,7 +60,7 @@ var getRenderedComponent = function(TodoItem){
   //   TodoItemFactory({done: false, name: 'Write Tutorial'})
   // );
   var renderedComponent = ReactDOMServer.renderToString(
-    TodoItemFactory({name: "John"})
+    TodoItemFactory()
   );
   return renderedComponent;
 }
