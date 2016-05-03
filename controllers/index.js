@@ -68,7 +68,7 @@ var getRenderedLayout = function(renderedComponent){
   var layoutTemplate = Handlebars.compile(fileData);
 
   var renderedLayout = layoutTemplate({
-    content: renderedComponent
+    // content: renderedComponent
   });
   return renderedLayout;
 }
