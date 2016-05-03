@@ -4,7 +4,7 @@ var config = require('../config/config.js');//require all modules that are share
 var appConfig = require('../config/appConfig'); // configure service api urls in dev/prod/beta
 var redisClient = require('../helpers/exporters/export_redisClient').redisClient;
 var loginMiddleWare = require("../helpers/login/api.js");
-var TodoItem = require('../common/components/todo-item');
+var TodoItem = require('../common/todo-item');
 // var React = modules.React;
 import * as React from 'react';
 var Handlebars = modules.Handlebars;

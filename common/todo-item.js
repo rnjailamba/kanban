@@ -8,6 +8,8 @@ var isNode = typeof module !== 'undefined' && module.exports
   , _ = isNode ? require('underscore') : window._
   , ReactBootstrap = isNode ? require('react-bootstrap') : window.ReactBootstrap
 
+// import NavBar from './components/navBar'
+
 
 var Navbar = ReactBootstrap.Navbar,
     Nav = ReactBootstrap.Nav,
@@ -93,7 +95,7 @@ var CommentBox = React.createClass({
 
 if (isNode) {
   console.log("in is node");
-  module.exports.component = TodoItem;
+  module.exports.component = CommentBox;
 } else {
   ReactDOM.render(
     <CommentBox />
